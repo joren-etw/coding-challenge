@@ -33,7 +33,7 @@ class CalculateCustomerDiscount
 
         return [
             'amount' => round($this->total * ($this->discountPercentage / 100), 2),
-            'reason' => 'Current revenue higher than ' . $this->discountFromAmount
+            'reason' => 'Current revenue higher than ' . $this->discountFromAmount . ' (' . $this->customer->revenue . ')'
         ];
     }
 }
