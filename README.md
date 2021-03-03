@@ -21,7 +21,9 @@ In the examples this means that:
 - when you buy 5 you will not get a free product
 - when you buy 10 you will get 1 free product (5 + 1 free + 4)
 
-I know this is something that differs between users so it seemed to me this would be the best way to solve this. In a real life situation this boolean could be a usersetting.
+if this is false a sixth product will automatically be added.
+
+I know this is something that differs between users so it seemed to me this would be a good way to solve this. In a real life situation this boolean could be a usersetting.
 
 All data will be stored in a MySQL database to simulate a real life situation as good as possible.
 
