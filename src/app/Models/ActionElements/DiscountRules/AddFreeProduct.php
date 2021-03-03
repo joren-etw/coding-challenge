@@ -40,7 +40,7 @@ class AddFreeProduct
                 $this->products[$key]['quantity'] += $freeProducts;
                 $this->products[$key]['total_price_with_discount'] = $this->products[$key]['total_price'] - $totalDiscount;
                 $this->products[$key]['discount'] = [
-                    'amount' => $totalDiscount,
+                    'amount' => round($totalDiscount, 2),
                     'free_quantity' => $freeProducts,
                     'reason' => 'Got a free product for every ' . round($this->fromQty, 2) . 'th product'
                 ];

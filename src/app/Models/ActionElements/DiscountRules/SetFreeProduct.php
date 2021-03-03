@@ -57,7 +57,7 @@ class SetFreeProduct
             $totalDiscount = $freeProducts * $product['unit_price'];
             $products[$key]['total_price_with_discount'] = $this->products[$key]['total_price'] - $totalDiscount;
             $products[$key]['discount'] = [
-                'amount' => $totalDiscount,
+                'amount' => round($totalDiscount, 2),
                 'free_quantity' => $freeProducts,
                 'reason' => 'Set every ' . round($this->fromQty, 2) . 'th paid product free for this category'
             ];
