@@ -2,11 +2,12 @@
 
 To get started, make sure you have [Docker installed](https://docs.docker.com/docker-for-mac/install/) and docker-compose (included in Docker for Mac) on your system
 
-Next, go to your terminal and run `run.sh` in this folder
+Open your terminal and go to the `./src` folder. From here, run `composer install`.
+Next, go to the root folder and run `run.sh`.
 
 After that completes, the service will be available on localhost on default port 80.
 
-The requested endpoint is available at `localhost/api/calculate-discounts` and will accept a `get` request with the content as JSON in it's body.
+The requested endpoint is available at `localhost:80/api/calculate-discounts` and will accept a `get` request with the content as JSON in it's body.
 
 All data will be stored in a MySQL database to simulate a real life situation as good as possible.
 
