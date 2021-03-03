@@ -21,6 +21,7 @@ class DiscountRulePercentageOnCheapestProduct extends Model
     public function handle(Collection $products): array {
         $qty = $products->sum('quantity');
         $discountFrom = $this->discount_from;
+        $discountPercentage = $this->percentage;
 
         /** If the quantity is less than the set discount_from amount, return 0.00 discount result */
         if($qty < $discountFrom){
@@ -34,15 +35,15 @@ class DiscountRulePercentageOnCheapestProduct extends Model
         }
 
         /** Get the cheapest product from the collection and calculate it's discount */
-        $cheapest = $products->sortBy('price')->first();
-        $discount = $cheapest['price'] * ($this->percentage / 100);
+        $cheapest = $products->sortBy('unit_price')->first();
+        $discount = $cheapest['total_price'] * ($discountPercentage / 100);
 
         /** Return all products with 0.00 discount result, except for the found cheapest product */
-        return $products->map(static function ($product) use ($cheapest, $discountFrom, $discount) {
+        return $products->map(static function ($product) use ($cheapest, $discountFrom, $discount, $discountPercentage) {
             if($product['product_id'] === $cheapest['product_id']){
                 $product['discount'] = [
-                    'amount' => $discount,
-                    'reason' => 'Total quantity for this category is bigger or equal to ' . $discountFrom . ' and this is the cheapest product of this category'
+                    'amount' => round($discount, 2),
+                    'reason' => $discountPercentage . '% discount because the total quantity for this category is bigger or equal to ' . $discountFrom . ' and this is the cheapest product of this category'
                 ];
                 return $product;
             }
