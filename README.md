@@ -10,7 +10,7 @@ The requested endpoint is available at `localhost/api/calculate-discounts` and w
 
 All data will be stored in a MySQL database to simulate a real life situation as good as possible.
 
-This microservice was developped on Ubuntu, please keep in mind that when running Docker on MacOS might decrease it's performance.
+`` A postman collection was included (`Discounts_challenge.postman_collection.json`) that includes all example orders and can be imported in Postman. ``
 
 Bringing up the Docker Compose network with `site` instead of just using `up`, ensures that only our site's containers are brought up at the start, instead of all of the command containers as well. The following are built for our web server, with their exposed ports detailed:
 

@@ -1,0 +1,99 @@
+{
+	"info": {
+		"_postman_id": "4b99d37d-5f5c-48e1-8138-c692c13371ee",
+		"name": "Discounts challenge",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Order 3",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"id\": \"3\",\n  \"customer-id\": \"3\",\n  \"items\": [\n    {\n      \"product-id\": \"A101\",\n      \"quantity\": \"2\",\n      \"unit-price\": \"9.75\",\n      \"total\": \"19.50\"\n    },\n    {\n      \"product-id\": \"A102\",\n      \"quantity\": \"1\",\n      \"unit-price\": \"49.50\",\n      \"total\": \"49.50\"\n    }\n  ],\n  \"total\": \"69.00\"\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost/api/calculate-discounts",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"api",
+						"calculate-discounts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Order 2",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"id\": \"2\",\n  \"customer-id\": \"2\",\n  \"items\": [\n    {\n      \"product-id\": \"B102\",\n      \"quantity\": \"5\",\n      \"unit-price\": \"4.99\",\n      \"total\": \"24.95\"\n    }\n  ],\n  \"total\": \"24.95\"\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost/api/calculate-discounts",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"api",
+						"calculate-discounts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Order 1",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"id\": \"1\",\n  \"customer-id\": \"1\",\n  \"items\": [\n    {\n      \"product-id\": \"B102\",\n      \"quantity\": \"10\",\n      \"unit-price\": \"4.99\",\n      \"total\": \"49.90\"\n    }\n  ],\n  \"total\": \"49.90\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost/api/calculate-discounts",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"api",
+						"calculate-discounts"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
