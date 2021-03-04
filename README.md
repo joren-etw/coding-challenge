@@ -1,6 +1,6 @@
 ## Usage
 
-To get started, make sure you have [Docker installed](https://docs.docker.com/docker-for-mac/install/) and docker-compose (included in Docker for Mac) on your system
+To get started, make sure you have [Docker](https://docs.docker.com/docker-for-mac/install/), docker-compose (included in Docker for Mac) and composer installed on your system
 
 Open your terminal and go to the `./src` folder. From here, run `composer install`.
 Next, go to the root folder and run `run.sh`.
