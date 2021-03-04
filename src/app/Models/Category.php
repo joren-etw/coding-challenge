@@ -9,11 +9,13 @@ class Category extends Model
 {
     use HasFactory;
 
-    public function discount() {
+    public function discount()
+    {
         return $this->morphTo(__FUNCTION__, 'discount_type_type', 'discount_type_id');
     }
 
-    public function products() {
+    public function products()
+    {
         return $this->hasMany(Product::class);
     }
 }

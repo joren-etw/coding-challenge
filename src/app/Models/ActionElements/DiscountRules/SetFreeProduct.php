@@ -31,7 +31,8 @@ class SetFreeProduct
      *
      * @return array
      */
-    public function handle(): array {
+    public function handle(): array
+    {
         foreach($this->products as $key => $product){
             $qty = (float)$product['quantity'];
             $freeProducts = 0;

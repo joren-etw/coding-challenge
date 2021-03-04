@@ -13,6 +13,13 @@ class DiscountRepository implements DiscountInterface
 {
     use ResponseAPI;
 
+    /**
+     * @param array $order
+     *
+     * Fetches total discounts and detail discounts
+     *
+     * @return JsonResponse
+     */
     public function getDiscounts(array $order): JsonResponse
     {
         try {

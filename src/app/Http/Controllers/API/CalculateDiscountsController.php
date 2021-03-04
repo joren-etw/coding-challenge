@@ -11,12 +11,21 @@ class CalculateDiscountsController extends Controller
 {
     private $discountInterface;
 
+    /**
+     * @param DiscountInterface $discountInterface
+     */
     public function __construct(DiscountInterface $discountInterface)
     {
         $this->discountInterface = $discountInterface;
     }
 
-    public function index(Request $request): JsonResponse {
+    /**
+     * @param Request $request
+     *
+     * @return JsonResponse
+     */
+    public function index(Request $request): JsonResponse
+    {
         return $this->discountInterface->getDiscounts($request->all());
     }
 }

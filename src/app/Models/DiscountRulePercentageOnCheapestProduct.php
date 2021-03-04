@@ -11,7 +11,13 @@ class DiscountRulePercentageOnCheapestProduct extends Model
 {
     use HasFactory;
 
-    public function handle(Collection $products): array {
+    /**
+     * @param Collection $products
+     *
+     * @return array
+     */
+    public function handle(Collection $products): array
+    {
         return PercentageOnCheapestProduct::dispatchNow($products, (float)$this->discount_from, (float)$this->percentage);
     }
 }

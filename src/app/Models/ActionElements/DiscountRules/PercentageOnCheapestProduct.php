@@ -31,7 +31,8 @@ class PercentageOnCheapestProduct
      *
      * @return array
      */
-    public function handle(): array {
+    public function handle(): array
+    {
         $qty = $this->products->sum('quantity');
         $discountFrom = $this->fromQty;
         $discountPercentage = $this->percentage;

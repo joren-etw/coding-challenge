@@ -7,11 +7,11 @@ use Illuminate\Http\Request;
 interface DiscountInterface
 {
     /**
-     * Post order to get discounts as result
+     * Get discounts by order data
      *
      * @param   \App\Http\Request       $request
      *
-     * @method  POST    api/calculate-discounts
+     * @method  GET    api/calculate-discounts
      * @access  public
      */
     public function getDiscounts(array $order);

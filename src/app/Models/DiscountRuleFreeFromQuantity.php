@@ -21,7 +21,8 @@ class DiscountRuleFreeFromQuantity extends Model
      *
      * @return array
      */
-    public function handle(Collection $products): array {
+    public function handle(Collection $products): array
+    {
         $products = $products->toArray();
 
         if($this->discountMethodSet){

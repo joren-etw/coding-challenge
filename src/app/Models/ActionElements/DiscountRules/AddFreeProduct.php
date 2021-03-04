@@ -29,7 +29,8 @@ class AddFreeProduct
      *
      * @return array
      */
-    public function handle(): array {
+    public function handle(): array
+    {
         foreach($this->products as $key => $product){
             if($product['quantity'] >= $this->fromQty){
                 /** Determine amount of free products and total discount */

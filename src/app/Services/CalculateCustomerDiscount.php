@@ -14,6 +14,10 @@ class CalculateCustomerDiscount
     private $customer;
     private $total;
 
+    /**
+     * @param Customer $customer
+     * @param float $total
+     */
     public function __construct(Customer $customer, float $total)
     {
         $this->discountFromAmount = 1000;
@@ -22,8 +26,12 @@ class CalculateCustomerDiscount
         $this->total = $total;
     }
 
-    public function handle()
+    /**
+     * @return array
+     */
+    public function handle(): array
     {
+        /** Return discount 0.00 when revenue is not high enough */
         if($this->customer->revenue < $this->discountFromAmount){
             return [
                 'amount' => 0.00,
@@ -31,6 +39,7 @@ class CalculateCustomerDiscount
             ];
         }
 
+        /** Revenue is high enough, calculate discount and return data */
         return [
             'amount' => round($this->total * ($this->discountPercentage / 100), 2),
             'reason' => 'Current revenue higher than ' . $this->discountFromAmount . ' (' . $this->customer->revenue . ')'
