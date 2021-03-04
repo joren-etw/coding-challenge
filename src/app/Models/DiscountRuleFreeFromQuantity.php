@@ -12,7 +12,7 @@ class DiscountRuleFreeFromQuantity extends Model
 {
     use HasFactory;
 
-    private $discountMethodSet = false;
+    private $discountMethodSet = true;
 
     /**
      * @param Collection $products

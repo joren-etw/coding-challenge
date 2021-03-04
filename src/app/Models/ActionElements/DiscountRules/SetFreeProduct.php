@@ -38,7 +38,7 @@ class SetFreeProduct
 
             /** Set discount to 0.00 if the quantity is equal to the from quantity */
             if($qty === $this->fromQty){
-                $products[$key]['discount'] = [
+                $this->products[$key]['discount'] = [
                     'amount' => 0.00,
                     'free_quantity' => 0,
                     'reason' => 'Receive a free product from the ' . round($this->fromQty, 2) . 'th product. The next product will be free'
@@ -55,14 +55,14 @@ class SetFreeProduct
 
             /** Calculate discount and set product's discount data */
             $totalDiscount = $freeProducts * $product['unit_price'];
-            $products[$key]['total_price_with_discount'] = $this->products[$key]['total_price'] - $totalDiscount;
-            $products[$key]['discount'] = [
+            $this->products[$key]['total_price_with_discount'] = $this->products[$key]['total_price'] - $totalDiscount;
+            $this->products[$key]['discount'] = [
                 'amount' => round($totalDiscount, 2),
                 'free_quantity' => $freeProducts,
                 'reason' => 'Set every ' . round($this->fromQty, 2) . 'th paid product free for this category'
             ];
         }
 
-        return $products;
+        return $this->products;
     }
 }
